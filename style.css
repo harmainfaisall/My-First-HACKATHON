@@ -1,0 +1,608 @@
+:root {
+    --primary-color: #4CAF4F;
+    --secondary-color: #263238;
+    --text-color: #4D4D4D;
+    --text-light: #717171;
+    --bg-color: #FFFFFF;
+    --silver: #F5F7FA;
+    --white: #FFFFFF;
+    --nav-text: #18191F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    /* Slightly wider */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--silver);
+    /* Match Hero bg usually or transparent? Image shows white/silver blending */
+    background-color: var(--white);
+    padding: 30px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #18191F;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #3e8e41;
+}
+
+/* Hero Section */
+#hero {
+    background-color: var(--silver);
+    padding: 96px 0;
+    position: relative;
+    padding-bottom: 40px;
+    /* Adjust for dots */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    line-height: 76px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.hero-text h1 .highlight {
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 60px;
+    padding-bottom: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    /* Active one is green, others lighter usually */
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+/* Clients Section */
+#clients {
+    padding: 50px 0;
+    background-color: var(--white);
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#clients h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+#clients p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4D4D4D;
+    /* Placeholder color for icons */
+    padding: 0 50px;
+    /* Indent logos slightly */
+}
+
+/* Community Section */
+#community {
+    padding: 20px 0;
+    margin-bottom: 80px;
+}
+
+#community h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    line-height: 44px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#community p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.community-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    /* Wider gap between cards as per image spacing seems airy */
+    margin-top: 40px;
+    padding: 0 50px;
+}
+
+.community-card {
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(171, 190, 209, 0.2);
+    /* Subtle shadow based on look */
+    text-align: center;
+    flex: 1;
+}
+
+.community-card .icon-bg {
+    margin-bottom: 16px;
+    display: inline-block;
+    position: relative;
+}
+
+.community-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    line-height: 36px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.community-card p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Unlock Section */
+#unlock {
+    padding: 50px 0;
+    background-color: var(--white);
+    margin-bottom: 50px;
+}
+
+.unlock-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.unlock-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.unlock-text {
+    max-width: 600px;
+}
+
+.unlock-text h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 44px;
+    margin-bottom: 16px;
+}
+
+.unlock-text p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 32px;
+}
+
+/* Stats Section */
+#stats {
+    background-color: var(--silver);
+    padding: 64px 0;
+}
+
+.stats-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-text h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 44px;
+    margin-bottom: 8px;
+}
+
+.stats-text h2 .highlight {
+    color: var(--primary-color);
+}
+
+.stats-text p {
+    color: #18191F;
+    font-size: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+    width: 45%;
+    /* Slightly tighter */
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 36px;
+}
+
+.stat-info p {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+/* CTA Section */
+#cta {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--silver);
+    /* Image shows it might be silver, or simple white transition? Looks white in new image above footer?
+       Actually, looking at the very bottom, "Pellentesque..." background seems slightly different from footer but same as white?
+       Wait, the footer is dark. The section above is white.
+    */
+    /* Let's assume silver based on standard Landify, or white */
+}
+
+#cta h2 {
+    font-size: 64px;
+    /* Very large in image */
+    font-weight: 600;
+    color: #263238;
+    line-height: 76px;
+    margin-bottom: 32px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #263238;
+    color: var(--white);
+    padding: 64px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo-text {
+    color: var(--white);
+}
+
+.copyright {
+    margin: 40px 0;
+    font-size: 14px;
+    line-height: 24px;
+    color: #F5F7FA;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Circle bg? */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+    /* Tweak gap */
+}
+
+.footer-column h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.footer-column a {
+    display: block;
+    color: #F5F7FA;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.subscribe-form {
+    position: relative;
+    max-width: 255px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    outline: none;
+}
+
+.subscribe-form button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    .community-grid {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .stats-grid {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-text {
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    /* Clients */
+    .clients-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    /* Community */
+    .community-grid {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .community-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Unlock Section */
+    .unlock-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .unlock-text {
+        max-width: 100%;
+    }
+
+    /* Stats Section */
+    .stats-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .stats-text {
+        margin-bottom: 20px;
+    }
+
+    .stats-grid {
+        width: 100%;
+        gap: 30px;
+        justify-items: center;
+    }
+
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .clients-logos img {
+        width: 40px;
+        height: auto;
+    }
+
+    #cta h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
